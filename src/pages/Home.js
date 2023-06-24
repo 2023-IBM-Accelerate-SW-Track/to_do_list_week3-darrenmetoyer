@@ -39,9 +39,14 @@ class Home extends Component {
     // Create a array that contains the current array and the new todo item
     let new_list = [...this.state.todos, todo];
     // Update the local state with the new array.
-    this.setState({
-      todos: new_list,
-    });
+    if (todo = null || todo == "Invalid Date") {
+      return;
+    } else {
+      this.setState({
+        todos: new_list,
+      });
+    }
+    
   };
   render() {
     return (
